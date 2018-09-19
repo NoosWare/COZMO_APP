@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#images
+noos_example.jpeg
+noos_orb.jpg
+noos_orb_example.jpeg

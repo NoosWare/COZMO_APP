@@ -28,7 +28,6 @@ class cozmo_use_noos:
     async def new_image(self, event, *, image:cozmo.world.CameraImage, **kw):
         if self.model_saved_ == True and self.busy_ == False:
             self.busy_ = True
-            print('Image')
             image = self.robot_.world.latest_image
             if image is not None:
                 raw_image = image.raw_image
@@ -78,7 +77,7 @@ class cozmo_use_noos:
          
     async def orb(self, keypoints):
         if keypoints is not None:
-            if len(keypoints) < 50: 
+            if len(keypoints) < 30: 
                 await self.robot_.play_anim_trigger(cozmo.anim.Triggers.CodeLabSquint1).wait_for_completed()
                 await self.robot_.say_text("I can't see the object!", play_excited_animation = True).wait_for_completed()
             else:

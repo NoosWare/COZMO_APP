@@ -4,7 +4,7 @@
 
 Most of the examples of the NOOS Cloud Platform have been done in C++. However, this doesn't mean that can't be used with other languages.
 
-This repository contains three different games using [NOOS](https://noos.cloud/) and ![COZMO robot](https://www.stuff.tv/sites/stuff.tv/files/brands/Anki/Cozmo/cozmo-wheelie-e.jpg)
+This repository contains three different games using [NOOS](https://noos.cloud/) and [COZMO](https://www.anki.com/en-gb/cozmo). ![COZMO robot](https://www.stuff.tv/sites/stuff.tv/files/brands/Anki/Cozmo/cozmo-wheelie-e.jpg)
 
 The language used is `Python`
 
@@ -28,8 +28,8 @@ pip install --upgrade pip
 # To reach the platform
 pip install requests 
 # COZMO SDK
-pip install --user 'cozmo[camera]'
-pip install --user --upgrade cozmo
+pip install  'cozmo[camera]'
+pip install  --upgrade cozmo
 # Image management library used by cozmo sdk
 pip install --user Pillow
 ```
@@ -95,3 +95,13 @@ the object rotating in the place and moving the head (to avoid Cozmo falls).
 In the case you saved the model previously, change the option to `True`. So Cozmo will follow the object without pressing anything.
 
 To finish the program press the `red` cube.
+
+**NOTE:** If you notice that the robot is not following the object you have chosen, modify the value of the `threshold` of the algorithm in `game3.py` file:
+
+```python
+async def new_image(...):
+    ...
+    await self.orb(self.noos_.orb_keypoints(self.filename_, 70))
+```
+
+The number is the `threshold`. Do it smaller for filtering better, or bigger if it is not capable of following your object when it's alone (no enviromental noise).

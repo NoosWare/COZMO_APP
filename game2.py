@@ -32,7 +32,6 @@ class cozmo_use_noos:
             raw_image.save(self.filename_)
             result = self.noos_.object_recognition(self.filename_)
             if result is not None:
-                print(result)
                 return result
             else:
                 await self.actions.write_text("ERROR")
@@ -98,7 +97,7 @@ class cozmo_use_noos:
         if self.objs.word_to_guess == "End":
             await self.robot_.say_text("You have tried all the words! You win!").wait_for_completed()
             self.objs.clear()
-            await self.robot_.play_anim_trigger(self.actions.happy_anim_list[randint(0,6)]).wait_for_completed()
+            await self.robot_.play_anim_trigger(self.actions.good_anim_list[randint(0,6)]).wait_for_completed()
             self.busy_ = False
             return
         await self.robot_.say_text(self.objs.word_to_guess).wait_for_completed()
