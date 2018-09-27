@@ -6,6 +6,8 @@ Most of the examples of the NOOS Cloud Platform have been done in C++. However, 
 
 This repository contains three different games using [NOOS](https://noos.cloud/) and [COZMO](https://www.anki.com/en-gb/cozmo). ![COZMO robot](https://www.stuff.tv/sites/stuff.tv/files/brands/Anki/Cozmo/cozmo-wheelie-e.jpg)
 
+You can check on Youtube the [video example](https://www.youtube.com/watch?v=g9el8ma3Csg)
+
 The language used is `Python`
 
 ## Before running it
@@ -74,7 +76,7 @@ To finish the program press the `red` cube.
 To run it:
 
 ```bash
-python3 game1.py -u your_noos_user -p your_password
+python3 game2.py -u your_noos_user -p your_password
 ```
 
 **NOTE**: You can find an image of every object in the list for this game in the folder `/images/items`
@@ -85,7 +87,7 @@ This game shows the service `ORB`.
 Cozmo will follow the object you indicate. For example, to run it you have to write the following command:
 
 ```bash
-python3 game1.py -u your_noos_user -p your_password -m False
+python3 game3.py -u your_noos_user -p your_password -m False
 ```
 
 With the option `model` equal to `False`, indicates that you haven't saved a model before. So, when the program starts,
